@@ -1,0 +1,22 @@
+window = Tk()
+window["bg"] = "white"
+window.title("Конвентер рублей в доллары и назад.")
+window.attributes('-fullscreen', True)
+
+закрыть = Label(window, bg="white", fg="black", text="Чтобы закрыть окно нажите Alt+F4.")
+закрыть.pack()
+тд = Label(window, bg="white", fg="black", text="Текущая дата и время:")
+тд.pack()
+дмгчм = Label(window, bg="white", fg="black", text=now.strftime("%d-%m-%Y %H:%M"))
+дмгчм.pack()
+
+первоначальная_кнопка = Button(master=window, bg="white", fg="black", text="Начать", command=начать)
+первоначальная_кнопка.pack(expand=True, fill=BOTH)
+
+пояснение = Label(window, bg="white", fg="black", text="Введите необходиое число, выберите валюту и нажмите ОК.")
+пояснение.pack_forget()
+сбор_вводных_данных = Frame(relief=SUNKEN, bg="black", borderwidth=3)
+сбор_вводных_данных.pack_forget()
+число = Entry(master=сбор_вводных_данных, bg="black", fg="white", width=9)
+число.grid(column=0, row=1)
+валюта = Combobox(master=сбор_вводных_данных, background="grey", foreground="white", width=9)
